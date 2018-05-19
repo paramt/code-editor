@@ -1,4 +1,4 @@
-<!-- 
+<!--
 lint
 https://codemirror.net/demo/lint.html
 
@@ -30,37 +30,37 @@ V 1.0.0
 	"applicationCategory" : "Code Editor"
 	}
 	</script>
-	
-	<link rel="apple-touch-icon" sizes="180x180" href="/pme/favicon/code/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/pme/favicon/code/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/pme/favicon/code/favicon-16x16.png">
-	<link rel="manifest" href="/pme/favicon/code/apple-touch-iconfavicon/site.webmanifest">
-	<link rel="mask-icon" href="/pme/favicon/code/safari-pinned-tab.svg" color="#0021b7">
-	<link rel="shortcut icon" href="/pme/favicon/code/favicon.ico">
+
+	<link rel="apple-touch-icon" sizes="180x180" href="//ars.fast.sheridanc.on.ca/pme/favicon/code/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="//ars.fast.sheridanc.on.ca/pme/favicon/code/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="//ars.fast.sheridanc.on.ca/pme/favicon/code/favicon-16x16.png">
+	<link rel="manifest" href="//ars.fast.sheridanc.on.ca/pme/favicon/code/apple-touch-iconfavicon/site.webmanifest">
+	<link rel="mask-icon" href="//ars.fast.sheridanc.on.ca/pme/favicon/code/safari-pinned-tab.svg" color="#0021b7">
+	<link rel="shortcut icon" href="//ars.fast.sheridanc.on.ca/pme/favicon/code/favicon.ico">
 	<meta name="apple-mobile-web-app-title" content="Code Editor">
 	<meta name="application-name" content="Code Editor">
 	<meta name="msapplication-TileColor" content="#0058d8">
-	<meta name="msapplication-config" content="/pme/favicon/code/browserconfig.xml">
+	<meta name="msapplication-config" content="//ars.fast.sheridanc.on.ca/pme/favicon/code/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
-	
+
 	<!-- animate.css -->
 	<link rel="stylesheet" href="animate.css">
 	<script type="text/javascript" src="wow.js"></script>
 	<script>new WOW().init();</script>
-	
+
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
-	
+
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
-	
+
 	<link rel="stylesheet" href="http://codemirror.net/lib/codemirror.css">
-	
+
 </head>
 
 <body onresize="resize()" onload="loadCode()">
-	
+
 	<div class="bigscreen">
 		<h1><span class="bold blue">&ltCode&gt</span> <span class="light">Editor</span></h1>
 		<p class="light">Online code editing. Made <span class="semi-bold blue">simple</span>.</p>
@@ -70,9 +70,9 @@ V 1.0.0
 			<option value="css">CSS</option>
 			<option value="js">Javascript</option>
 		</select>
-		
+
 		<a href="info.html" class="share white"><i class="fas fa-info-circle"></i></a>
-		
+
 		<table>
 			<tr>
 				<td><form id="form" method="POST" action="upload.php"><textarea class="editor" id="editor" autofocus></textarea><input onsubmit="getCode();" id="final" name="code"></form></td>
@@ -87,46 +87,46 @@ V 1.0.0
 			</tr>
 		</table>
 	</div>
-	
+
 	<div class="smallscreen" style="margin:auto;">
-	
+
 		<div style="height:100vh;">
 			<h1 class="small title animated fadeInDown scroll-resize"><span class="bold blue">&ltCode&gt</span> <span style="" class="light">Editor</span></h1>
 			<p class="small light subtitle animated fadeInLeft animation-delay-200">Online code editing. Made <span class="small semi-bold blue">simple</span>.</p>
 		</div>
-		
+
 		<div style="background-color:#F1F1F1;text-align:center;margin:auto;width:60%;border:3px solid #0021b7;border-radius:15%;padding:35px;" class="wow slideInRight">
 			<i class="fas fa-bolt" style="font-size:4em;color:#0021b7"></i>
 			<br><br> <span style="font-size:1.5em;">Fast and Lightweight</span>
 			<p>You're ready to write code as soon as you open the website. No logins, ads, or any of that annoying jazz. Code Tick is designed to be <span class="blue">simple</span> and <span class="blue">efficient</span>.</p>
 		</div>
-		
-		<br><br>		
+
+		<br><br>
 
 		<div style="background-color:#F1F1F1;text-align:center;margin:auto;width:60%;border:3px solid #0021b7;border-radius:15%;padding:35px;" class="wow slideInLeft">
 			<i class="fas fa-save" style="font-size:4em;color:#0021b7"></i>
 			<br><br> <span style="font-size:1.5em;">Live Editing</span>
 			<p>You start writing code, while we render it live. Easy debugging and writing, all without the hassle of saving or uploading. Don't worry about losing your work, because we <span class="blue">auto-save</span> all of your code.</p>
-		</div>		
+		</div>
 
 		<br><br>
-		
+
 		<div style="background-color:#F1F1F1;text-align:center;margin:auto;width:60%;border:3px solid #0021b7;border-radius:15%;padding:35px;" class="wow slideInRight">
 			<i class="fas fa-exclamation-circle" style="font-size:4em;color:#0021b7"></i>
 			<br><br> <span style="font-size:1.5em;">Error Checking</span>
 			<p>Spending entire nights trying to figure out what's wrong is <i>never</i> fun. Instead of countless hours on online forums, try out our <span class="blue">code linter</span>, and save a couple of hours.</p>
-		</div>		
-		
+		</div>
+
 		<br><br>
-		
+
 		<div style="background-color:#F1F1F1;text-align:center;margin:auto;width:60%;border:3px solid #0021b7;border-radius:15%;padding:35px;" class="wow slideInLeft">
 			<i class="fas fa-desktop" style="font-size:4em;color:#0021b7"></i>
 			<br><br> <span style="font-size:1.5em;">Generate Webpage</span>
 			<p>When you do finish your big project, you'll want some place to show it off! That's why we offer <span class="blue">unlimited</span> webpages that you can generate at your disposal.</p>
 		</div>
-	
+
 	</div>
-	
+
 </body>
 
 <!-- codemirror -->
@@ -231,9 +231,9 @@ V 1.0.0
 		foldGutter: true,
 		gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "CodeMirror-lint-markers"],
 		lint: true,
-		
+
 	});
-	
+
 	// CodeMirror HTMLHint Integration
 	(function(mod) {
 	  if (typeof exports == "object" && typeof module == "object") // CommonJS
@@ -262,7 +262,7 @@ V 1.0.0
 		  });
 		}
 		return found;
-	  }); 
+	  });
 	});
 
 	// ruleSets for HTMLLint
@@ -287,43 +287,43 @@ V 1.0.0
 		} else {
 			editor.setValue(localStorage.getItem("html"));
 		}
-		
+
 		var frame = result.contentWindow.document;
 		frame.open();
 		frame.writeln(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>");
 		frame.close();
 	};
-	
+
 	function modeChange(){
 		if(document.getElementById("mode").value == "js"){
 			editor.setOption("mode", "javascript");
 			editor.setValue(localStorage.getItem("js"));
 		} else if(document.getElementById("mode").value == "css"){
-			editor.setOption("mode", "css");	
+			editor.setOption("mode", "css");
 			editor.setValue(localStorage.getItem("css"));
 		} else if(document.getElementById("mode").value == "html"){
 			editor.setOption("mode", "text/html");
-			editor.setValue(localStorage.getItem("html"));			
+			editor.setValue(localStorage.getItem("html"));
 		}
 	}
-	
+
 	editor.setSize((window.innerWidth/2)-50, window.innerHeight-250);
-	
+
 	function resize(){
 		editor.setSize((window.innerWidth/2)-50, window.innerHeight-250);
 		var result = document.getElementById("result");
 		result.style.width = window.innerWidth/2 + "px";
 		result.style.height = window.innerHeight-250 + "px";
 	}
-	
+
 	/** result **/
 	var result = document.getElementById("result");
 	result.style.width = window.innerWidth/2 + "px";
 	result.style.height = window.innerHeight-250 + "px";
-	
+
 	function compile() {
 		var frame = result.contentWindow.document;
-		
+
 		document.body.onkeyup = function(){
 			if(document.getElementById("mode").value == "js"){
 				localStorage.setItem("js", editor.getValue());
@@ -332,7 +332,7 @@ V 1.0.0
 			} else if(document.getElementById("mode").value == "html"){
 				localStorage.setItem("html", editor.getValue());
 			}
-			
+
 			frame.open();
 			frame.writeln(localStorage.getItem("html") + "<style>" + localStorage.getItem("css") + "</style> \<script\>" + localStorage.getItem("js") + "\</script\>");
 			frame.close();
@@ -345,7 +345,7 @@ V 1.0.0
 		document.getElementById("final").value = window.btoa(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>");
 		document.getElementById('form').submit();
 	}
-	
+
 	function resetCode(){
 		if (confirm("Are you sure you want to reset all code? You will lose your work and won't be able to undo it.")){
 			editor.setValue("<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>");
@@ -375,8 +375,8 @@ function download(data, filename, type) {
         a.click();
         setTimeout(function() {
             document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);  
-        }, 0); 
+            window.URL.revokeObjectURL(url);
+        }, 0);
     }
 }
 
@@ -385,9 +385,9 @@ $(document).keydown(function(e){
 	if(e.ctrlKey && e.keyCode == 83){
 		event.preventDefault();
 		var title = prompt("What would you like to title your project?", "MyFirstProject");
-		
+
 		download(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>", title+".html", "html");
-		
+
 	}
 	if(e.ctrlKey && e.keyCode == 65){
 		event.preventDefault();
