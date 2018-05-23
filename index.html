@@ -48,7 +48,7 @@
 
 </head>
 
-<body onresize="resize()" onload="loadCode()">
+<body onresize="resize()" onload="loadCode(); hideLoadingBar();">
 
 	<div class="smallscreen" style="margin:auto;">
 
@@ -90,6 +90,13 @@
 	</div>
 
 	<div class="bigscreen">
+
+		<div class="spinner" id="spinner">
+  		<div class="bounce1"></div>
+  		<div class="bounce2"></div>
+  		<div class="bounce3"></div>
+		</div>
+
 		<h1><span class="bold blue">&ltCode&gt</span> <span class="light">Editor</span></h1>
 		<p class="light">Online code editing. Made <span class="semi-bold blue">simple</span>.</p>
 
@@ -115,8 +122,6 @@
 			</tr>
 		</table>
 	</div>
-
-
 
 </body>
 
@@ -302,5 +307,9 @@ $(document).keydown(function(e){
 	}
 })
 </script>
-
+<script>
+	function hideLoadingBar(){
+		document.getElementById("spinner").style.opacity = "0";
+	}
+</script>
 </html>
