@@ -8,3 +8,4 @@ Webpage generator with a live code editor
 4. Add loading page/bar
 5. Add changelog + version number
 6. Minify and bundle all resources
+7. Load all resources in <head> and put async=true
