@@ -23,14 +23,14 @@
 
 /** textarea **/
 .editor{
-	position: absolute; 
-	top: 130px; 
-	bottom: 0; 
+	position: absolute;
+	top: 130px;
+	bottom: 0;
 	width: 100%;
-	
-	border: none; 
+
+	border: none;
 	outline: none;
-	
+
 	font-family: 'Courier New', Courier, monospace;
 }
 
@@ -129,4 +129,14 @@ border:0.1em solid black;
 
 input{
 	display:none;
+}
+
+.ad{
+	background-color:#F1F1F1;
+	text-align:center;
+	margin:auto;
+	width:60%;
+	border:3px solid #0021b7;
+	border-radius:15%;
+	padding:35px;
 }

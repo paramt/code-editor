@@ -61,6 +61,45 @@ V 1.0.0
 
 <body onresize="resize()" onload="loadCode()">
 
+	<div class="smallscreen" style="margin:auto;">
+
+		<div style="height:100vh;">
+			<h1 class="small title animated fadeInDown scroll-resize"><span class="bold blue">&ltCode&gt</span> <span class="light">Editor</span></h1>
+			<p class="small light subtitle animated fadeInLeft animation-delay-200">Online code editing. Made <span class="small semi-bold blue">simple</span>.</p>
+		</div>
+
+		<div class="wow slideInRight ad">
+			<i class="fas fa-bolt" style="font-size:4em;color:#0021b7"></i>
+			<br><br> <span style="font-size:1.5em;">Fast and Lightweight</span>
+			<p>You're ready to write code as soon as you open the website. No logins, ads, or any of that annoying jazz. Code Tick is designed to be <span class="blue">simple</span> and <span class="blue">efficient</span>.</p>
+		</div>
+
+		<br><br>
+
+		<div class="wow slideInLeft ad">
+			<i class="fas fa-save" style="font-size:4em;color:#0021b7"></i>
+			<br><br> <span style="font-size:1.5em;">Live Editing</span>
+			<p>You start writing code, while we render it live. Easy debugging and writing, all without the hassle of saving or uploading. Don't worry about losing your work, because we <span class="blue">auto-save</span> all of your code.</p>
+		</div>
+
+		<br><br>
+
+		<div class="wow slideInRight ad">
+			<i class="fas fa-exclamation-circle" style="font-size:4em;color:#0021b7"></i>
+			<br><br> <span style="font-size:1.5em;">Error Checking</span>
+			<p>Spending entire nights trying to figure out what's wrong is <i>never</i> fun. Instead of countless hours on online forums, try out our <span class="blue">code linter</span>, and save a couple of hours.</p>
+		</div>
+
+		<br><br>
+
+		<div class="wow slideInLeft ad">
+			<i class="fas fa-desktop" style="font-size:4em;color:#0021b7"></i>
+			<br><br> <span style="font-size:1.5em;">Generate Webpage</span>
+			<p>When you do finish your big project, you'll want some place to show it off! That's why we offer <span class="blue">unlimited</span> webpages that you can generate at your disposal.</p>
+		</div>
+
+	</div>
+
 	<div class="bigscreen">
 		<h1><span class="bold blue">&ltCode&gt</span> <span class="light">Editor</span></h1>
 		<p class="light">Online code editing. Made <span class="semi-bold blue">simple</span>.</p>
@@ -88,50 +127,12 @@ V 1.0.0
 		</table>
 	</div>
 
-	<div class="smallscreen" style="margin:auto;">
 
-		<div style="height:100vh;">
-			<h1 class="small title animated fadeInDown scroll-resize"><span class="bold blue">&ltCode&gt</span> <span style="" class="light">Editor</span></h1>
-			<p class="small light subtitle animated fadeInLeft animation-delay-200">Online code editing. Made <span class="small semi-bold blue">simple</span>.</p>
-		</div>
-
-		<div style="background-color:#F1F1F1;text-align:center;margin:auto;width:60%;border:3px solid #0021b7;border-radius:15%;padding:35px;" class="wow slideInRight">
-			<i class="fas fa-bolt" style="font-size:4em;color:#0021b7"></i>
-			<br><br> <span style="font-size:1.5em;">Fast and Lightweight</span>
-			<p>You're ready to write code as soon as you open the website. No logins, ads, or any of that annoying jazz. Code Tick is designed to be <span class="blue">simple</span> and <span class="blue">efficient</span>.</p>
-		</div>
-
-		<br><br>
-
-		<div style="background-color:#F1F1F1;text-align:center;margin:auto;width:60%;border:3px solid #0021b7;border-radius:15%;padding:35px;" class="wow slideInLeft">
-			<i class="fas fa-save" style="font-size:4em;color:#0021b7"></i>
-			<br><br> <span style="font-size:1.5em;">Live Editing</span>
-			<p>You start writing code, while we render it live. Easy debugging and writing, all without the hassle of saving or uploading. Don't worry about losing your work, because we <span class="blue">auto-save</span> all of your code.</p>
-		</div>
-
-		<br><br>
-
-		<div style="background-color:#F1F1F1;text-align:center;margin:auto;width:60%;border:3px solid #0021b7;border-radius:15%;padding:35px;" class="wow slideInRight">
-			<i class="fas fa-exclamation-circle" style="font-size:4em;color:#0021b7"></i>
-			<br><br> <span style="font-size:1.5em;">Error Checking</span>
-			<p>Spending entire nights trying to figure out what's wrong is <i>never</i> fun. Instead of countless hours on online forums, try out our <span class="blue">code linter</span>, and save a couple of hours.</p>
-		</div>
-
-		<br><br>
-
-		<div style="background-color:#F1F1F1;text-align:center;margin:auto;width:60%;border:3px solid #0021b7;border-radius:15%;padding:35px;" class="wow slideInLeft">
-			<i class="fas fa-desktop" style="font-size:4em;color:#0021b7"></i>
-			<br><br> <span style="font-size:1.5em;">Generate Webpage</span>
-			<p>When you do finish your big project, you'll want some place to show it off! That's why we offer <span class="blue">unlimited</span> webpages that you can generate at your disposal.</p>
-		</div>
-
-	</div>
 
 </body>
 
 <!-- codemirror -->
 <script src="http://codemirror.net/lib/codemirror.js"></script>
-<link rel="stylesheet" href="codemirror/theme/bespin.css">
 
 <!-- search & replace
 <script src="https://codemirror.net/addon/search/search.js"></script>
@@ -157,9 +158,8 @@ V 1.0.0
 <link rel="stylesheet" href="http://codemirror.net/addon/hint/show-hint.css">
 
 
-<!-- lint (error checking) --> <!-- TODO -->
+<!-- lint (error checking) -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jshint/2.9.5/jshint.min.js"></script>
-<script src="//rawgithub.com/zaach/jsonlint/79b553fb65c192add9066da64043458981b3972b/lib/jsonlint.js"></script>
 <script src="https://unpkg.com/csslint@1.0.5/dist/csslint.js"></script>
 
 <script src="https://codemirror.net/lib/codemirror.js"></script>
