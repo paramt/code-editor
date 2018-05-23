@@ -1,13 +1,3 @@
-<!--
-lint
-https://codemirror.net/demo/lint.html
-
-codepen demo for linter
-https://codepen.io/anon/pen/RaNwNd?editors=1010
-
-V 1.0.0
--->
-
 <!DOCTYPE html>
 <html>
 
@@ -50,7 +40,6 @@ V 1.0.0
 
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
@@ -197,7 +186,7 @@ V 1.0.0
 	});
 
 	function loadCode(){
-		if(localStorage.getItem("html") === null || localStorage.getItem("html") === ""){
+		if(localStorage.getItem("html") === null){
 			editor.setValue("<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>");
 			localStorage.setItem("html","<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>");
 			localStorage.setItem("js","var num = 2;\nvar string = \"some text\";\nvar array = [42, 11, -13, 14];\n\nfunction myFunction(){\n\t\n}");
