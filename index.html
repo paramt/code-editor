@@ -48,7 +48,7 @@
 
 </head>
 
-<body onresize="resize()" onload="loadCode();">
+<body style="background-color:#00167a;overflow:hidden;" onresize="resize()" onload="loadCode(); hideLoadingBar();">
 
 	<div class="smallscreen" style="margin:auto;">
 
@@ -90,6 +90,14 @@
 	</div>
 
 	<div class="bigscreen">
+
+		<div id="spinnerOverlay">
+			<div class="spinner" id="spinner">
+				<div class="bounce1"></div>
+				<div class="bounce2"></div>
+				<div class="bounce3"></div>
+			</div>
+		</div>
 
 		<h1><span class="bold blue">&ltCode&gt</span> <span class="light">Editor</span></h1>
 		<p class="light">Online code editing. Made <span class="semi-bold blue">simple</span>.</p>
@@ -299,6 +307,15 @@ $(document).keydown(function(e){
 		document.getElementById("editor").execCommand("selectAll");
 	}
 })
+</script>
+
+<script>
+	function hideLoadingBar(){
+		document.getElementById("spinner").style.filter = "opacity(0)";
+		document.getElementById("spinnerOverlay").style.filter = "opacity(0)";
+		document.getElementById("spinnerOverlay").style.zIndex = "-1";
+		document.body.style.backgroundColor = "white";
+	}
 </script>
 
 </html>
