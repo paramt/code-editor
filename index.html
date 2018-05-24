@@ -197,6 +197,8 @@
 		frame.open();
 		frame.writeln(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>");
 		frame.close();
+
+		compile();
 	};
 
 	function modeChange(){
@@ -243,8 +245,6 @@
 			frame.close();
 		};
 	};
-
-	compile();
 
 	function getCode(){
 		document.getElementById("final").value = window.btoa(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>");
