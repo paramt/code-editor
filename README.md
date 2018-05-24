@@ -7,7 +7,7 @@ Webpage generator with a live code editor
 - [ ] Add page to load existing webpage into editor (edit.php)
 - [ ] Change localStorage to indexedDB
 - [x] Fix issue where reloading multiple times quickly causes HTML to disappear
-- [ ] Add loading page/bar
+- [x] Add loading page/bar
 - [ ] Add changelog + version number
 - [ ] Minify and bundle all resources
 - [ ] Load all resources in <head> and put async=true
