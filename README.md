@@ -6,7 +6,7 @@ Webpage generator with a live code editor
 - [ ] Change structure of textareas to ensure CTRL + Z works as intended
 - [ ] Add page to load existing webpage into editor (edit.php)
 - [ ] Change localStorage to indexedDB
-- [ ] Fix issue where reloading multiple times quickly causes HTML to disappear
+- [x] Fix issue where reloading multiple times quickly causes HTML to disappear
 - [ ] Add loading page/bar
 - [ ] Add changelog + version number
 - [ ] Minify and bundle all resources
