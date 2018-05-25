@@ -192,8 +192,8 @@ input{
 #spinnerOverlay{
 	background-color:#00167a;
 	margin:0;
-	z-index:5;
-	transition:filter 1s, z-index 0.25s 0.75s;
+	z-index:10;
+	transition:filter 1s, z-index 0s 0.85s;
 
 	position:absolute;
 	height:100%;

@@ -48,7 +48,7 @@
 
 </head>
 
-<body style="overflow-x:hidden;transition:background-color 0.6s;" onresize="resize()" onload="loadCode(); hideLoadingBar();">
+<body style="overflow-x:hidden;transition:background-color 0.5s 0.5s;" onresize="resize()" onload="loadCode(); hideLoadingBar();">
 
 	<div class="smallscreen" style="margin:auto;">
 
@@ -370,7 +370,7 @@ $(document).keydown(function(e){
 	function hideInfo(){
 		document.getElementById("info").className = ("animated fadeOutLeft");
 		document.body.style.backgroundColor = "#00167a";
-		window.setTimeout(function(){location.reload();}, 600);
+		window.setTimeout(function(){location.reload();}, 1000);
 	}
 </script>
 
