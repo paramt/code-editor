@@ -146,16 +146,16 @@ input{
 
 .spinner {
 	position: absolute;
-	top: 45%;
-	left: 45%;
-  width: 70px;
+	top: 45vh;
+	left: 37.5vw;
+  width: 25vw;
   text-align: center;
 	transition: filter 1s;
 }
 
 .spinner > div {
-  width: 18px;
-  height: 18px;
+  width: 2vw;
+  height: 2vw;
   background-color: white;
 
   border-radius: 100%;
