@@ -48,13 +48,21 @@
 
 </head>
 
-<body style="overflow-x:hidden;transition:background-color 0.5s 0.5s;" onresize="resize()" onload="loadCode(); hideLoadingBar();">
+<body onbeforeunload="window.scrollTo(0, 0);" style="overflow-x:hidden;transition:background-color 0.5s 0.5s;" onresize="resize()" onload="loadCode(); hideLoadingBar();">
+
+	<div id="spinnerOverlay">
+		<div class="spinner" id="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
 
 	<div class="smallscreen" style="margin:auto;">
 
 		<div style="height:100vh;">
-			<h1 class="small title animated fadeInDown scroll-resize"><span class="bold blue">&ltCode&gt</span> <span class="light">Editor</span></h1>
-			<p class="small light subtitle animated fadeInLeft animation-delay-200">Online code editing. Made <span class="small semi-bold blue">simple</span>.</p>
+			<h1 id="smallScreenTitle" class=""><span class="bold blue">&ltCode&gt</span> <span class="light">Editor</span></h1>
+			<p id="smallScreenSubtitle" class="">Online code editing. Made <span class="small semi-bold blue">simple</span>.</p>
 		</div>
 
 		<div class="wow slideInRight ad">
@@ -90,14 +98,6 @@
 	</div>
 
 	<div class="bigscreen" id="main">
-
-		<div id="spinnerOverlay">
-			<div class="spinner" id="spinner">
-				<div class="bounce1"></div>
-				<div class="bounce2"></div>
-				<div class="bounce3"></div>
-			</div>
-		</div>
 
 		<h1><span class="bold blue">&ltCode&gt</span> <span class="light">Editor</span></h1>
 		<p class="light">Online code editing. Made <span class="semi-bold blue">simple</span>.</p>
@@ -360,6 +360,10 @@ $(document).keydown(function(e){
 		document.getElementById("spinner").style.filter = "opacity(0)";
 		document.getElementById("spinnerOverlay").style.filter = "opacity(0)";
 		document.getElementById("spinnerOverlay").style.zIndex = "-1";
+
+		document.getElementById("smallScreenTitle").className = "animated fadeInDown small title scroll-resize animation-no-delay";
+		document.getElementById("smallScreenSubtitle").className = "animated fadeInLeft small light subtitle animation-delay-500";
+		window.setTimeout(function(){document.body.style.overflow = "auto";}, 2000);
 	}
 
 	function showInfo(){

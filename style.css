@@ -102,16 +102,38 @@ border:0.1em solid black;
         display:none;
 				overflow:hidden;
     }
-	.smallscreen {
+		.smallscreen {
         display:block;
     }
+
+		.spinner > div {
+		  width: 7vw;
+		  height: 7vw;
+		  background-color: white;
+
+		  border-radius: 100%;
+		  display: inline-block;
+		  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+		  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+		}
 }
 
 @media only screen and (min-width: 801px) {
     .bigscreen {
         display:block;
     }
-	.smallscreen {
+
+		.spinner > div {
+		  width: 2vw;
+		  height: 2vw;
+		  background-color: white;
+
+		  border-radius: 100%;
+		  display: inline-block;
+		  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+		  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+		}
+		.smallscreen {
         display:none;
     }
 }
@@ -148,20 +170,9 @@ input{
 	position: absolute;
 	top: 45vh;
 	left: 37.5vw;
-  width: 25vw;
-  text-align: center;
+	width: 25vw;
+	text-align: center;
 	transition: filter 1s;
-}
-
-.spinner > div {
-  width: 2vw;
-  height: 2vw;
-  background-color: white;
-
-  border-radius: 100%;
-  display: inline-block;
-  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
 
 .spinner .bounce1 {
@@ -206,4 +217,8 @@ input{
 	position:absolute;
 	display:none;
 	top:0;
+}
+
+body{
+	overflow:hidden;
 }
