@@ -162,12 +162,12 @@
 
 		<div class="animated fadeInLeft animation-delay-1500">
 			<h1><span class="light">Code Editor // </span><span class="bold blue">Code</span></h1>
-			<p class="light"><a href="https://github.com/ParamThakkar/CodeEditor">Github</a><br>(Based on <a href="https://github.com/ParamThakkar/CodeEditor">CodeMirror</a>)</p>
+			<p class="light"><a target="_blank" href="https://github.com/paramt/CodeEditor">Github</a><br>(Based on <a target="_blank" href="https://codemirror.net">CodeMirror</a>)</p>
 		</div>
 
 		<div class="animated fadeInLeft animation-delay-2000">
 			<h1><span class="light">Code Editor // </span><span class="bold blue">Suggestions</span></h1>
-			<p class="light">Contact <a href="http://param.me/#contact">Param Thakkar</a></p>
+			<p class="light">Contact <a target="_blank" href="http://param.me/?ref=code#contact">Param Thakkar</a></p>
 		</div>
 	</div>
 
@@ -340,11 +340,13 @@ function download(data, filename, type) {
 }
 
 $(document).keydown(function(e){
-	//CTRL + V keydown combo
+	//CTRL + S keydown combo
 	if(e.ctrlKey && e.keyCode == 83){
 		event.preventDefault();
-		var title = prompt("What would you like to title your project?", "MyFirstProject");
-
+		var title = prompt("What would you like to title your project?", "MyProject");
+		if (title === null) {
+			return;
+		};
 		download(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>", title+".html", "html");
 
 	}
