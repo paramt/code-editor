@@ -220,154 +220,101 @@
 <script src="https://codemirror.net/addon/edit/matchtags.js"></script>
 
 <script>
-/** editor **/
-var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
-  mode: "text/html",
-  theme: "default",
-  lineNumbers: true,
-  extraKeys: { "Ctrl-Space": "autocomplete", "Ctrl-J": "toMatchingTag" },
-  indentUnit: 4,
-  autoCloseTags: true,
-  autoCloseBrackets: true,
-  matchTags: { bothTags: true },
-  foldGutter: true,
-  gutters: [
-    "CodeMirror-linenumbers",
-    "CodeMirror-foldgutter",
-    "CodeMirror-lint-markers"
-  ],
-  lint: true
-});
 
-function loadCode() {
-  if (
-    localStorage.getItem("html") === null &&
-    localStorage.getItem("css") === null &&
-    localStorage.getItem("js") === null
-  ) {
-    editor.setValue(
-      "<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>"
-    );
-    localStorage.setItem(
-      "html",
-      "<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>"
-    );
-    localStorage.setItem(
-      "js",
-      'var num = 2;\nvar string = "some text";\nvar array = [42, 11, -13, 14];\n\nfunction myFunction(){\n\t\n}'
-    );
-    localStorage.setItem(
-      "css",
-      "element-selector{\n\t\n}\n\n.class-selector{\n\t\n}\n\n#id-selector{\n\t\n}"
-    );
-  } else {
-    editor.setValue(localStorage.getItem("html"));
-  }
+	/** editor **/
+	var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+		mode: "text/html",
+    theme: "default",
+    lineNumbers: true,
+		extraKeys: {"Ctrl-Space":"autocomplete", "Ctrl-J": "toMatchingTag"},
+		indentUnit: 4,
+		autoCloseTags: true,
+		autoCloseBrackets: true,
+		matchTags: {bothTags: true},
+		foldGutter: true,
+		gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter", "CodeMirror-lint-markers"],
+		lint: true,
 
-  var frame = result.contentWindow.document;
-  frame.open();
-  frame.writeln(
-    localStorage.getItem("html") +
-      "<style>" +
-      localStorage.getItem("css") +
-      "</style> <script>" +
-      localStorage.getItem("js") +
-      "</script>"
-  );
-  frame.close();
+	});
 
-  compile();
-}
+	function loadCode(){
+		if(localStorage.getItem("html") === null && localStorage.getItem("css") === null && localStorage.getItem("js") === null){
+			editor.setValue("<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>");
+			localStorage.setItem("html","<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>");
+			localStorage.setItem("js","var num = 2;\nvar string = \"some text\";\nvar array = [42, 11, -13, 14];\n\nfunction myFunction(){\n\t\n}");
+			localStorage.setItem("css","element-selector{\n\t\n}\n\n.class-selector{\n\t\n}\n\n#id-selector{\n\t\n}");
+		} else {
+			editor.setValue(localStorage.getItem("html"));
+		}
 
-function modeChange() {
-  if (document.getElementById("mode").value == "js") {
-    editor.setOption("mode", "javascript");
-    editor.setValue(localStorage.getItem("js"));
-  } else if (document.getElementById("mode").value == "css") {
-    editor.setOption("mode", "css");
-    editor.setValue(localStorage.getItem("css"));
-  } else if (document.getElementById("mode").value == "html") {
-    editor.setOption("mode", "text/html");
-    editor.setValue(localStorage.getItem("html"));
-  }
-}
+		var frame = result.contentWindow.document;
+		frame.open();
+		frame.writeln(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>");
+		frame.close();
 
-editor.setSize(window.innerWidth / 2 - 50, window.innerHeight - 250);
+		compile();
+	};
 
-function resize() {
-  editor.setSize(window.innerWidth / 2 - 50, window.innerHeight - 250);
-  var result = document.getElementById("result");
-  result.style.width = window.innerWidth / 2 + "px";
-  result.style.height = window.innerHeight - 250 + "px";
-}
+	function modeChange(){
+		if(document.getElementById("mode").value == "js"){
+			editor.setOption("mode", "javascript");
+			editor.setValue(localStorage.getItem("js"));
+		} else if(document.getElementById("mode").value == "css"){
+			editor.setOption("mode", "css");
+			editor.setValue(localStorage.getItem("css"));
+		} else if(document.getElementById("mode").value == "html"){
+			editor.setOption("mode", "text/html");
+			editor.setValue(localStorage.getItem("html"));
+		}
+	}
 
-/** result **/
-var result = document.getElementById("result");
-result.style.width = window.innerWidth / 2 + "px";
-result.style.height = window.innerHeight - 250 + "px";
+	editor.setSize((window.innerWidth/2)-50, window.innerHeight-250);
 
-function compile() {
-  var frame = result.contentWindow.document;
+	function resize(){
+		editor.setSize((window.innerWidth/2)-50, window.innerHeight-250);
+		var result = document.getElementById("result");
+		result.style.width = window.innerWidth/2 + "px";
+		result.style.height = window.innerHeight-250 + "px";
+	}
 
-  document.body.onkeyup = function() {
-    if (document.getElementById("mode").value == "js") {
-      localStorage.setItem("js", editor.getValue());
-    } else if (document.getElementById("mode").value == "css") {
-      localStorage.setItem("css", editor.getValue());
-    } else if (document.getElementById("mode").value == "html") {
-      localStorage.setItem("html", editor.getValue());
-    }
+	/** result **/
+	var result = document.getElementById("result");
+	result.style.width = window.innerWidth/2 + "px";
+	result.style.height = window.innerHeight-250 + "px";
 
-    frame.open();
-    frame.writeln(
-      localStorage.getItem("html") +
-        "<style>" +
-        localStorage.getItem("css") +
-        "</style> <script>" +
-        localStorage.getItem("js") +
-        "</script>"
-    );
-    frame.close();
-  };
-}
+	function compile() {
+		var frame = result.contentWindow.document;
 
-function getCode() {
-  document.getElementById("final").value = window.btoa(
-    localStorage.getItem("html") +
-      "<style>" +
-      localStorage.getItem("css") +
-      "</style> <script>" +
-      localStorage.getItem("js") +
-      "</script>"
-  );
-  document.getElementById("form").submit();
-}
+		document.body.onkeyup = function(){
+			if(document.getElementById("mode").value == "js"){
+				localStorage.setItem("js", editor.getValue());
+			} else if(document.getElementById("mode").value == "css"){
+				localStorage.setItem("css", editor.getValue());
+			} else if(document.getElementById("mode").value == "html"){
+				localStorage.setItem("html", editor.getValue());
+			}
 
-function resetCode() {
-  if (
-    confirm(
-      "Are you sure you want to reset all code? You will lose your work and won't be able to undo it."
-    )
-  ) {
-    editor.setValue(
-      "<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>"
-    );
-    localStorage.setItem(
-      "html",
-      "<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>"
-    );
-    localStorage.setItem(
-      "js",
-      'var num = 2;\nvar string = "some text";\nvar array = [42, 11, -13, 14];\n\nfunction myFunction(){\n\t\n}'
-    );
-    localStorage.setItem(
-      "css",
-      "element-selector{\n\t\n}\n\n.class-selector{\n\t\n}\n\n#id-selector{\n\t\n}"
-    );
-    document.getElementById("mode").value = "html";
-    editor.setOption("mode", "text/html");
-  }
-}
+			frame.open();
+			frame.writeln(localStorage.getItem("html") + "<style>" + localStorage.getItem("css") + "</style> \<script\>" + localStorage.getItem("js") + "\</script\>");
+			frame.close();
+		};
+	};
+
+	function getCode(){
+		document.getElementById("final").value = window.btoa(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>");
+		document.getElementById('form').submit();
+	}
+
+	function resetCode(){
+		if (confirm("Are you sure you want to reset all code? You will lose your work and won't be able to undo it.")){
+			editor.setValue("<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>");
+			localStorage.setItem("html","<html>\n\t<head>\n\t\t<title>My First Project!</title>\n\t</head>\n\n\t<body>\n\t\t\n\t</body>\n</html>");
+			localStorage.setItem("js","var num = 2;\nvar string = \"some text\";\nvar array = [42, 11, -13, 14];\n\nfunction myFunction(){\n\t\n}");
+			localStorage.setItem("css","element-selector{\n\t\n}\n\n.class-selector{\n\t\n}\n\n#id-selector{\n\t\n}");
+			document.getElementById("mode").value = "html";
+			editor.setOption("mode", "text/html");
+		}
+	}
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -375,81 +322,62 @@ function resetCode() {
 <script>
 // Function to download data to a file
 function download(data, filename, type) {
-  var file = new Blob([data], { type: type });
-  if (window.navigator.msSaveOrOpenBlob)
-    // IE10+
-    window.navigator.msSaveOrOpenBlob(file, filename);
-  else {
-    // Others
-    var a = document.createElement("a"),
-      url = URL.createObjectURL(file);
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function() {
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-    }, 0);
-  }
+    var file = new Blob([data], {type: type});
+    if (window.navigator.msSaveOrOpenBlob) // IE10+
+        window.navigator.msSaveOrOpenBlob(file, filename);
+    else { // Others
+        var a = document.createElement("a"),
+                url = URL.createObjectURL(file);
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        setTimeout(function() {
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }, 0);
+    }
 }
 
-$(document).keydown(function(e) {
-  //CTRL + S keydown combo
-  if (e.ctrlKey && e.keyCode == 83) {
-    event.preventDefault();
-    var title = prompt(
-      "What would you like to title your project?",
-      "MyProject"
-    );
-    if (title === null) {
-      return;
-    }
-    download(
-      localStorage.getItem("html") +
-        "<style>" +
-        localStorage.getItem("css") +
-        "</style> <script>" +
-        localStorage.getItem("js") +
-        "</script>",
-      title + ".html",
-      "html"
-    );
-  }
-  if (e.ctrlKey && e.keyCode == 65) {
-    event.preventDefault();
-    document.getElementById("editor").execCommand("selectAll");
-  }
-});
+$(document).keydown(function(e){
+	//CTRL + S keydown combo
+	if(e.ctrlKey && e.keyCode == 83){
+		event.preventDefault();
+		var title = prompt("What would you like to title your project?", "MyProject");
+		if (title === null) {
+			return;
+		};
+		download(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>", title+".html", "html");
+
+	}
+	if(e.ctrlKey && e.keyCode == 65){
+		event.preventDefault();
+		document.getElementById("editor").execCommand("selectAll");
+	}
+})
 </script>
 
 <script>
-function hideLoadingBar() {
-  document.getElementById("spinner").style.filter = "opacity(0)";
-  document.getElementById("spinnerOverlay").style.filter = "opacity(0)";
-  document.getElementById("spinnerOverlay").style.zIndex = "-1";
+	function hideLoadingBar(){
+		document.getElementById("spinner").style.filter = "opacity(0)";
+		document.getElementById("spinnerOverlay").style.filter = "opacity(0)";
+		document.getElementById("spinnerOverlay").style.zIndex = "-1";
 
-  document.getElementById("smallScreenTitle").className =
-    "animated fadeInDown small title scroll-resize animation-no-delay";
-  document.getElementById("smallScreenSubtitle").className =
-    "animated fadeInLeft small light subtitle animation-delay-500";
-  window.setTimeout(function() {
-    document.body.style.overflow = "auto";
-  }, 2000);
-}
+		document.getElementById("smallScreenTitle").className = "animated fadeInDown small title scroll-resize animation-no-delay";
+		document.getElementById("smallScreenSubtitle").className = "animated fadeInLeft small light subtitle animation-delay-500";
+		window.setTimeout(function(){document.body.style.overflow = "auto";}, 2000);
+	}
 
-function showInfo() {
-  document.getElementById("main").className = "animated fadeOutUp";
-  document.getElementById("info").style.display = "block";
-}
+	function showInfo(){
+		document.getElementById("main").className = ("animated fadeOutUp");
+		document.getElementById("info").style.display = "block";
+	}
 
-function hideInfo() {
-  document.getElementById("info").className = "animated fadeOutLeft";
-  document.body.style.backgroundColor = "#00167a";
-  window.setTimeout(function() {
-    location.reload();
-  }, 1000);
-}
+	function hideInfo(){
+		document.getElementById("info").className = ("animated fadeOutLeft");
+		document.body.style.backgroundColor = "#00167a";
+		window.setTimeout(function(){location.reload();}, 1000);
+	}
 </script>
 
 </html>
