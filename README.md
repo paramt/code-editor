@@ -11,4 +11,4 @@ Webpage generator with a live code editor
 - [ ] Add changelog + version number
 - [ ] Minify and bundle all resources
 - [ ] Load all resources in <head> and put async=true
-- [ ] Animate transition from index to info.html
+- [x] Animate transition from index to info.html
