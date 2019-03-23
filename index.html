@@ -330,7 +330,7 @@
 		http.onload = function() {
 	    if(http.readyState == 4 && http.status == 200) {
 				// Shorten url
-				url = 'http://thakkaha.dev.fast.sheridanc.on.ca/pme/1pt/add-url-to-db.php?url=' + "https://thakkaha.dev.fast.sheridanc.on.ca/pme/code-editor/api/view.php?code=" + http.responseText;
+				url = 'https://thakkaha.dev.fast.sheridanc.on.ca/pme/1pt/add-url-to-db.php?url=' + "https://thakkaha.dev.fast.sheridanc.on.ca/pme/code-editor/api/view.php?code=" + http.responseText;
 				http.open('GET', url, true);
 
 				http.onload = function() {
