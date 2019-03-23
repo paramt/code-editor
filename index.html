@@ -68,7 +68,7 @@
 		<div class="wow slideInRight ad">
 			<i class="fas fa-bolt" style="font-size:4em;color:#0021b7"></i>
 			<br><br> <span style="font-size:1.5em;">Fast and Lightweight</span>
-			<p>You're ready to write code as soon as you open the website. No logins, ads, or any of that annoying jazz. Code Tick is designed to be <span class="blue">simple</span> and <span class="blue">efficient</span>.</p>
+			<p>You're ready to write code as soon as you open the website. No logins, ads, or any of that annoying jazz. Code Editor is designed to be <span class="blue">simple</span> and <span class="blue">efficient</span>.</p>
 		</div>
 
 		<br><br>
@@ -76,7 +76,7 @@
 		<div class="wow slideInLeft ad">
 			<i class="fas fa-save" style="font-size:4em;color:#0021b7"></i>
 			<br><br> <span style="font-size:1.5em;">Live Editing</span>
-			<p>You start writing code, while we render it live. Easy debugging and writing, all without the hassle of saving or uploading. Don't worry about losing your work, because we <span class="blue">auto-save</span> all of your code.</p>
+			<p>You start writing code, while Code Editor render it live. Easy debugging and writing, all without the hassle of saving or uploading. Don't worry about losing your work, because your code is <span class="blue">auto-saved</span>.</p>
 		</div>
 
 		<br><br>
@@ -84,7 +84,7 @@
 		<div class="wow slideInRight ad">
 			<i class="fas fa-exclamation-circle" style="font-size:4em;color:#0021b7"></i>
 			<br><br> <span style="font-size:1.5em;">Error Checking</span>
-			<p>Spending entire nights trying to figure out what's wrong is <i>never</i> fun. Instead of countless hours on online forums, try out our <span class="blue">code linter</span>, and save a couple of hours.</p>
+			<p>Spending entire nights trying to figure out what's wrong is <i>never</i> fun. Instead of countless hours on online forums, try using the in-built <span class="blue">code linter</span>, and save a couple of hours.</p>
 		</div>
 
 		<br><br>
@@ -92,7 +92,7 @@
 		<div class="wow slideInLeft ad">
 			<i class="fas fa-desktop" style="font-size:4em;color:#0021b7"></i>
 			<br><br> <span style="font-size:1.5em;">Generate Webpage</span>
-			<p>When you do finish your big project, you'll want some place to show it off! That's why we offer <span class="blue">unlimited</span> webpages that you can generate at your disposal.</p>
+			<p>When you do finish your big project, you'll want some place to show it off! That's why Code Editor offers <span class="blue">unlimited</span> webpages for you to generate.</p>
 		</div>
 
 	</div>
@@ -125,24 +125,34 @@
 		</table>
 	</div>
 
-	<div id="info">
-		<button onclick="hideInfo();" class="share white animated fadeInRight animation-no-delay"><i class="fas fa-arrow-circle-left"></i></button>
+	<div id="info" style="width: 98vw;">
+		<button onclick="hideInfo();" style="z-index: 1" class="share white animated fadeInRight animation-no-delay"><i class="fas fa-arrow-circle-left"></i></button>
 
-		<div class="animated fadeInLeft animation-no-delay" style="width:50%">
-			<h1><span class="light">Code Editor // </span><span class="bold blue">FAQ</span></h1>
-			<p>How many webpages can I generate per day? <span class="blue"></span><br>
-			<span class="light">As many as you can make.</span></p>
-
-			<p>How do I browse other people's projects? <span class="blue"></span><br>
-			<span class="light">You can't... as of right now.</span></p>
+		<div class="animated fadeInLeft animation-no-delay">
+			<h1><span class="light">Code Editor // </span><span class="bold blue">About</span></h1>
+			<p>I created this site a while ago to learn server-side coding and database management. <br>
+				Although I will not be updating this site anymore, you can continue to use all of its features. <br>
+				If you're interested in some of my more recent projects, you can visit <a href="https://www.param.me">www.param.me</a>.</p>
 		</div>
 
-		<div class="animated fadeInLeft animation-delay-500">
+		<div class="animated fadeInLeft animation-delay-500" style="width:50%">
+			<h1><span class="light">Code Editor // </span><span class="bold blue">FAQ</span></h1>
+			<p>How do I save my work? <span class="blue"></span><br>
+			<span class="light">Your work is automatically saved.</span></p>
+
+			<p>How many webpages can I generate per day? <span class="blue"></span><br>
+			<span class="light">There's no limit to how many pages you can make.</span></p>
+
+			<p>Can other people see my webpages? <span class="blue"></span><br>
+			<span class="light">Anyone with the link can see your webpages.</span></p>
+		</div>
+
+		<div class="animated fadeInLeft animation-delay-1000">
 			<h1><span class="light">Code Editor // </span><span class="bold blue">Features</span></h1>
 			<p class="light">-code folding <br>-error checking <br>-autocomplete <br>-autosave/live editing <br>-higlight matching tags <br>-generate webpage easily<span class="semi-bold blue"></span></p>
 		</div>
 
-		<div class="animated fadeInLeft animation-delay-1000">
+		<div class="animated fadeInLeft animation-delay-1500">
 			<h1><span class="light">Code Editor // </span><span class="bold blue">Keyboard Shortcuts</span></h1>
 			<table class="light" cellspacing="20">
 				<tr>
@@ -160,14 +170,11 @@
 			</table>
 		</div>
 
-		<div class="animated fadeInLeft animation-delay-1500">
-			<h1><span class="light">Code Editor // </span><span class="bold blue">Code</span></h1>
-			<p class="light"><a target="_blank" href="https://github.com/paramt/CodeEditor">Github</a><br>(Based on <a target="_blank" href="https://codemirror.net">CodeMirror</a>)</p>
-		</div>
-
 		<div class="animated fadeInLeft animation-delay-2000">
-			<h1><span class="light">Code Editor // </span><span class="bold blue">Suggestions</span></h1>
-			<p class="light">Contact <a target="_blank" href="http://param.me/?ref=code#contact">Param Thakkar</a></p>
+			<h1><span class="light">Code Editor // </span><span class="bold blue">Code</span></h1>
+			<p class="light">View the code on <a target="_blank" href="https://github.com/paramt/code-editor">Github</a></p>
+			<p class="light"><a target="_blank" href="https://github.com/paramt/code-editor/issues/new">Request features & report bugs</a></p>
+			<p class="light">Contact <a target="_blank" href="mailto://code@param.me">Param Thakkar</a></p>
 		</div>
 	</div>
 
