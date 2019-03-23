@@ -178,6 +178,13 @@
 		</div>
 	</div>
 
+	<div class="popup-wrapper">
+		<div id="popup">
+			<p>Your site has been generated at <a id="short-link">1pt.co</a></p><br>
+			<button class="share" onclick="closePopup();">Back</button>
+		</div>
+	</div>
+
 <!-- codemirror -->
 <script src="https://codemirror.net/lib/codemirror.js"></script>
 <script src="https://codemirror.net/mode/xml/xml.js"></script>
@@ -305,9 +312,44 @@
 		};
 	};
 
+	function closePopup(){
+		document.getElementsByClassName("popup-wrapper")[0].style.visibility = "hidden";
+		document.getElementsByClassName("popup-wrapper")[0].style.opacity = "0";
+	}
+
 	function getCode(){
-		document.getElementById("final").value = window.btoa(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>");
-		document.getElementById('form').submit();
+		// Get long-url
+		var http = new XMLHttpRequest();
+		var url = 'https://thakkaha.dev.fast.sheridanc.on.ca/pme/code-editor/api/upload.php';
+		var params = 'code=' + window.btoa(localStorage.getItem("html") + "\<style\>" + localStorage.getItem("css") + "\</style\> \<script\>" + localStorage.getItem("js") + "\</script\>");
+		http.open('POST', url, true);
+
+		//Send the proper header information along with the request
+		http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+		http.onload = function() {
+	    if(http.readyState == 4 && http.status == 200) {
+				// Shorten url
+				url = 'http://thakkaha.dev.fast.sheridanc.on.ca/pme/1pt/add-url-to-db.php?url=' + "https://thakkaha.dev.fast.sheridanc.on.ca/pme/code-editor/api/view.php?code=" + http.responseText;
+				http.open('GET', url, true);
+
+				http.onload = function() {
+					if(http.readyState == 4 && http.status == 200) {
+						document.getElementsByClassName("popup-wrapper")[0].style.visibility = "visible";
+						document.getElementsByClassName("popup-wrapper")[0].style.opacity = "1";
+						document.getElementById("short-link").href = "https://1pt.co/" + http.responseText;
+						document.getElementById("short-link").innerHTML = "www.1pt.co/" + http.responseText;
+					}
+				}
+
+				http.send();
+	    }
+		}
+
+		http.send(params);
+
+
+
 	}
 
 	function resetCode(){

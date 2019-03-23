@@ -226,3 +226,31 @@ input{
 body{
 	overflow:hidden;
 }
+
+.popup-wrapper{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+#popup{
+	width: 25vw;
+	height: 25vh;
+	background-color: white;
+	z-index: 50;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
