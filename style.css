@@ -174,8 +174,8 @@ input{
 	left: 37.5vw;
 	width: 25vw;
 	text-align: center;
-	-webkit-transition: filter 1s;
-	transition: filter 1s;
+	-webkit-transition: filter 1s, opacity 1s;
+	transition: filter 1s, opacity 1s;
 }
 
 .spinner .bounce1 {
@@ -207,8 +207,8 @@ input{
 	background-color:#00167a;
 	margin:0;
 	z-index:10;
-	transition:filter 1s, z-index 0s 0.85s;
-	-webkit-transition: filter 1s, z-index 0s 0.85s;
+	transition: filter 1s, z-index 0s 0.85s, opacity 1s;
+	-webkit-transition: filter 1s, z-index 0s 0.85s, opacity 1s;
 
 	position:absolute;
 	height:100%;

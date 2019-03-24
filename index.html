@@ -392,7 +392,9 @@ $(document).keydown(function(e){
 <script>
 	function hideLoadingBar(){
 		document.getElementById("spinner").style.filter = "opacity(0)";
+		document.getElementById("spinner").style.opacity = "0";
 		document.getElementById("spinnerOverlay").style.filter = "opacity(0)";
+		document.getElementById("spinnerOverlay").style.opacity = "0";
 		document.getElementById("spinnerOverlay").style.zIndex = "-1";
 
 		document.getElementById("smallScreenTitle").className = "animated fadeInDown small title scroll-resize animation-no-delay";
