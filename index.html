@@ -301,6 +301,7 @@
 	function closePopup(){
 		document.getElementsByClassName("popup-wrapper")[0].style.visibility = "hidden";
 		document.getElementsByClassName("popup-wrapper")[0].style.opacity = "0";
+		document.getElementsByClassName("CodeMirror-vscrollbar")[0].style.visibility = "visible";
 	}
 
 	function getCode(){
@@ -325,6 +326,7 @@
 						document.getElementsByClassName("popup-wrapper")[0].style.opacity = "1";
 						document.getElementById("short-link").href = "https://1pt.co/" + http.responseText;
 						document.getElementById("short-link").innerHTML = "www.1pt.co/" + http.responseText;
+						document.getElementsByClassName("CodeMirror-vscrollbar")[0].style.visibility = "hidden";
 					}
 				}
 
@@ -333,9 +335,6 @@
 		}
 
 		http.send(params);
-
-
-
 	}
 
 	function resetCode(){
