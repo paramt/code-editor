@@ -1,4 +1,6 @@
-# Code Editor
+# Code Editor <img src=favicon/apple-touch-icon.png align=left height=44>
+
+
 [![Uptime](https://img.shields.io/uptimerobot/ratio/m782561485-796c30230b1ca57ee65d4e9c.svg?style=flat-square)](https://status.param.me/782561485)
 
 Webpage generator with a live code editor
